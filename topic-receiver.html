@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    RED.nodes.registerType('receive-azure-sb-topic',{
+        category: 'Azure',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            topic: {value:""},
+            subscription: {value:""},
+            connectionString: {value:""}
+        },
+        inputs:0,
+        outputs:1,
+        icon: "arrow-in.png",
+        label: function() {
+            return this.name||"receive-azure-sb-topic";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="receive-azure-sb-topic">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-subscription"><i class="icon-tag"></i> Subscription</label>
+        <input type="text" id="node-input-subscription" placeholder="Subscription">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-connectionString"><i class="icon-tag"></i> ConnectionString</label>
+        <input type="text" id="node-input-connectionString" placeholder="connectionString">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="receive-message">
+    <p>A simple node that receives messages from Azure Topic Subscription</p>
+</script>
